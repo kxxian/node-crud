@@ -11,7 +11,7 @@ My custom CRUD app that has a front-end and back-end for full-stack development.
 ![image](https://github.com/kxxian/node-crud/blob/main/screenshots/ss1.png?raw=true) 
 
 # App Features
-The samples are shown below
+The features are shown below
 ## Create, Delete, CSV, PDF, Print buttons
 ![image](https://github.com/kxxian/node-crud/blob/main/screenshots/ss2.png?raw=true)
 
@@ -26,3 +26,5 @@ The samples are shown below
 
 ## Custom pagination 
 ![image](https://github.com/kxxian/node-crud/blob/main/screenshots/ss6.png?raw=true)
+
+# Samples
