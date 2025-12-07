@@ -38,3 +38,8 @@ The features are shown below
 - Showing specific records 
 ![image](https://github.com/kxxian/node-crud/blob/main/screenshots/show1.png?raw=true)
 ![image](https://github.com/kxxian/node-crud/blob/main/screenshots/show2.png?raw=true)
+
+- Editing records
+![image](https://github.com/kxxian/node-crud/blob/main/screenshots/edit1.png?raw=true)
+![image](https://github.com/kxxian/node-crud/blob/main/screenshots/edit2.png?raw=true)
+![image](https://github.com/kxxian/node-crud/blob/main/screenshots/edit3.png?raw=true)
