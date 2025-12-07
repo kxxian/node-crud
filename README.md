@@ -27,7 +27,7 @@ The features are shown below
 ## Custom pagination 
 ![image](https://github.com/kxxian/node-crud/blob/main/screenshots/ss6.png?raw=true)
 
-# Samples
+# Samples (not all functionality will be shown in the images below)
 - Creating new post with validation
 ![image](https://github.com/kxxian/node-crud/blob/main/screenshots/create1.png?raw=true)
 ![image](https://github.com/kxxian/node-crud/blob/main/screenshots/create2.png?raw=true)
@@ -43,3 +43,6 @@ The features are shown below
 ![image](https://github.com/kxxian/node-crud/blob/main/screenshots/edit1.png?raw=true)
 ![image](https://github.com/kxxian/node-crud/blob/main/screenshots/edit2.png?raw=true)
 ![image](https://github.com/kxxian/node-crud/blob/main/screenshots/edit3.png?raw=true)
+
+- Filter data without Image and Attachments
+![image](https://github.com/kxxian/node-crud/blob/main/screenshots/filter.png?raw=true)
