@@ -29,5 +29,5 @@ The features are shown below
 
 # Samples
 - Creating new post with validation
-![image](https://github.com/kxxian/node-crud/blob/main/screenshots/ss6.png?raw=true)
+![image](https://github.com/kxxian/node-crud/blob/main/screenshots/create1.png?raw=true)
 ![image](https://github.com/kxxian/node-crud/blob/main/screenshots/create2.png?raw=true)
