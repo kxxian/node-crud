@@ -31,3 +31,6 @@ The features are shown below
 - Creating new post with validation
 ![image](https://github.com/kxxian/node-crud/blob/main/screenshots/create1.png?raw=true)
 ![image](https://github.com/kxxian/node-crud/blob/main/screenshots/create2.png?raw=true)
+
+- Custom toast for notifications
+![image](https://github.com/kxxian/node-crud/blob/main/screenshots/toast.png?raw=true)
