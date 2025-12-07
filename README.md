@@ -34,3 +34,7 @@ The features are shown below
 
 - Custom toast for notifications
 ![image](https://github.com/kxxian/node-crud/blob/main/screenshots/toast.png?raw=true)
+
+- Showing specific records 
+![image](https://github.com/kxxian/node-crud/blob/main/screenshots/show1.png?raw=true)
+![image](https://github.com/kxxian/node-crud/blob/main/screenshots/show2.png?raw=true)
