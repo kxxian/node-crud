@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Server version:               11.8.3-MariaDB-0+deb13u1 from Debian - -- Please help get to 10k stars at https://github.com/MariaDB/Server
--- Server OS:                    debian-linux-gnu
--- HeidiSQL Version:             12.12.1.208
+-- Server version:               12.1.2-MariaDB - Arch Linux
+-- Server OS:                    Linux
+-- HeidiSQL Version:             12.13.1.1
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -14,21 +14,25 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
--- Dumping data for table node_crud.posts: ~12 rows (approximately)
-DELETE FROM `posts`;
-INSERT INTO `posts` (`id`, `title`, `body`, `image`) VALUES
-	(1, 'Matrix', 'Everything that has a beginning, has an end', '1764678047764-matrix.jpg'),
-	(19, 'JavaScript', 'JavaScript (JS) is a high-level, dynamic, and multi-paradigm programming language that conforms to the ECMAScript standard.', '1765046626445-js.png'),
-	(20, 'NodeJS', 'A free, open-source, cross-platform JavaScript runtime environment that lets developers create servers, web apps, command line tools and scripts.', '1765046743402-nodejs.png'),
-	(21, 'ReactJS', 'Is an open-source JavaScript library developed and maintained by Meta (formerly Facebook) and a community of individual developers and companies. Its primary purpose is to facilitate the building of user interfaces (UIs) for web and native platforms.', '1765046877875-react.png'),
-	(22, 'PHP', 'PHP, which stands for "PHP: Hypertext Preprocessor" (a recursive acronym), is a widely-used, open-source, server-side scripting language primarily designed for web development. It can be embedded directly into HTML. ', '1765046937889-php.png'),
-	(23, 'HTML', 'HTML, or Hypertext Markup Language, is the standard language for creating web pages, used to structure content and describe how it should be displayed to users. ', '1765095279156-html.png'),
-	(24, 'CSS', 'CSS, which stands for Cascading Style Sheets, is a stylesheet language used to describe the presentation and styling of a document written in a markup language, most commonly HTML.', '1765095361978-css.png'),
-	(25, 'Laravel', 'A popular, free, open-source PHP web framework that provides elegant syntax and powerful tools to build modern, scalable web applications with a focus on developer experience.', '1765095396325-laravel.jpeg'),
-	(26, 'Ruby', 'Ruby is a dynamic, open-source programming language known for its focus on simplicity and productivity.', NULL),
-	(27, 'Go', '', NULL),
-	(28, 'C++', '', NULL),
-	(29, 'Java', 'A popular, multi-platform, object-oriented programming language developed by James Gosling at Sun Microsystems and now owned by Oracle.', NULL);
+
+-- Dumping database structure for node_crud
+DROP DATABASE IF EXISTS `node_crud`;
+CREATE DATABASE IF NOT EXISTS `node_crud` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */;
+USE `node_crud`;
+
+-- Dumping structure for table node_crud.post_attachments
+DROP TABLE IF EXISTS `post_attachments`;
+CREATE TABLE IF NOT EXISTS `post_attachments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `post_id` int(11) NOT NULL,
+  `filename` varchar(255) NOT NULL,
+  `original_name` varchar(255) NOT NULL,
+  `file_size` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  KEY `post_id` (`post_id`),
+  CONSTRAINT `1` FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table node_crud.post_attachments: ~12 rows (approximately)
 DELETE FROM `post_attachments`;
@@ -45,6 +49,32 @@ INSERT INTO `post_attachments` (`id`, `post_id`, `filename`, `original_name`, `f
 	(18, 23, '1765095279159-2wacz-attachment2.docx', 'attachment2.docx', 5111, '2025-12-07 08:14:39'),
 	(19, 23, '1765095279160-n4i9q-attachment3.docx', 'attachment3.docx', 5112, '2025-12-07 08:14:39'),
 	(20, 25, '1765095396326-77rkzc-attachment2.docx', 'attachment2.docx', 5111, '2025-12-07 08:16:36');
+
+-- Dumping structure for table node_crud.posts
+DROP TABLE IF EXISTS `posts`;
+CREATE TABLE IF NOT EXISTS `posts` (
+  `id` int(11) NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `body` text DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table node_crud.posts: ~12 rows (approximately)
+DELETE FROM `posts`;
+INSERT INTO `posts` (`id`, `title`, `body`, `image`) VALUES
+	(1, 'Matrix', 'Everything that has a beginning, has an end', '1764678047764-matrix.jpg'),
+	(19, 'JavaScript', 'JavaScript (JS) is a high-level, dynamic, and multi-paradigm programming language that conforms to the ECMAScript standard.', '1765046626445-js.png'),
+	(20, 'NodeJS', 'A free, open-source, cross-platform JavaScript runtime environment that lets developers create servers, web apps, command line tools and scripts.', '1765046743402-nodejs.png'),
+	(21, 'ReactJS', 'Is an open-source JavaScript library developed and maintained by Meta (formerly Facebook) and a community of individual developers and companies. Its primary purpose is to facilitate the building of user interfaces (UIs) for web and native platforms.', '1765046877875-react.png'),
+	(22, 'PHP', 'PHP, which stands for "PHP: Hypertext Preprocessor" (a recursive acronym), is a widely-used, open-source, server-side scripting language primarily designed for web development. It can be embedded directly into HTML. ', '1765046937889-php.png'),
+	(23, 'HTML', 'HTML, or Hypertext Markup Language, is the standard language for creating web pages, used to structure content and describe how it should be displayed to users. ', '1765095279156-html.png'),
+	(24, 'CSS', 'CSS, which stands for Cascading Style Sheets, is a stylesheet language used to describe the presentation and styling of a document written in a markup language, most commonly HTML.', '1765095361978-css.png'),
+	(25, 'Laravel', 'A popular, free, open-source PHP web framework that provides elegant syntax and powerful tools to build modern, scalable web applications with a focus on developer experience.', '1765095396325-laravel.jpeg'),
+	(26, 'Ruby', 'Ruby is a dynamic, open-source programming language known for its focus on simplicity and productivity.', NULL),
+	(27, 'Go', '', NULL),
+	(28, 'C++', '', NULL),
+	(29, 'Java', 'A popular, multi-platform, object-oriented programming language developed by James Gosling at Sun Microsystems and now owned by Oracle.', NULL);
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
